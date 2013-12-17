@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Intranet</title>
+</head>
+
+<body>
+    <h3>Registro</h3>
+    <form action="." method="POST" autocomplete="on">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username" required>
+        <p></p>
+        <input type="email" name="email" placeholder="email" required>
+        <p></p>
+        <input type="password" name="password_one" placeholder="password_one" required>
+        <p></p>
+        <input type="password" name="password_two" placeholder="password_two" required>
+        <p></p>
+        <input type="text" name="career" placeholder="career" required>
+        <p></p>
+        <input type="submit" value="Enter">
+    </form>
+</body>
+
+</html>

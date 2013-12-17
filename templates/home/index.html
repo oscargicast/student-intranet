@@ -16,13 +16,15 @@
     <form action="." method="POST" autocomplete="on">
         {% csrf_token %}
         <input type="text" name="username" placeholder="username" required>
+        <p></p>
         <input type="password" name="password" placeholder="password" required>
+        <p></p>
         <input type="submit" value="Enter">
     </form>
 
     <p></p>
     <p>{{message}}</p>
-    <a href="add">Register(Add Student)</a>
+    <a href="register">Register(Add Student)</a>
     {% endif %}
 </body>
 

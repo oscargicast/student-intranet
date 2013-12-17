@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Student(models.Model):
     user = models.OneToOneField(User)
-    age = models.IntegerField()
+    career = models.CharField(max_length=40)
 
     def __unicode__(self):
         return self.user.username
