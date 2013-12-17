@@ -1,10 +1,29 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Intranet</title>
 </head>
+
 <body>
-	hello world
+    {% if user.is_authenticated %}
+    <h3>Hola, {{ user.username|title }}</h3>
+    <a href="/delete">Delete Student</a>
+    <p></p>
+    <a href="/logout">Sign out</a>
+    {% else %}
+    <form action="." method="POST" autocomplete="on">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username" required>
+        <input type="password" name="password" placeholder="password" required>
+        <input type="submit" value="Enter">
+    </form>
+
+    <p></p>
+    <p>{{message}}</p>
+    <a href="add">Register(Add Student)</a>
+    {% endif %}
 </body>
+
 </html>
